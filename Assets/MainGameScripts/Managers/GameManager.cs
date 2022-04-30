@@ -24,7 +24,7 @@ namespace MainGameScripts
                     foreach (var o in objectsAvailableToSwitch)
                     {
                         var newObject = o.gameObject;
-                        if (newObject.layer != 6) continue;
+                        if (newObject.layer != 6 || newObject.name == currentPlayableObject.name) continue;
                         currentPlayableObject = newObject.GetComponent<PlayableObject>();
                         Camera.player = currentPlayableObject;
                     }
