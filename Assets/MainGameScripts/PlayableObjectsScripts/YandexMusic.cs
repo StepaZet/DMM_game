@@ -25,8 +25,9 @@ namespace MainGameScripts.PlayableObjectsScripts
         public override void Move(Vector2 direction)
         {
             if (!Input.GetKeyDown(KeyCode.Space)) return;
-            currentAudio.Stop();
-            currentAudio = tracks[RandomNumberGenerator.GetInt32(0, 0)];
+            if (currentAudio != null)
+                currentAudio.Stop();
+            currentAudio = tracks[RandomNumberGenerator.GetInt32(0, 1)];
             currentAudio.Play();
         }
     }

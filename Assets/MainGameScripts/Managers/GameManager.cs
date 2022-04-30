@@ -16,9 +16,10 @@ namespace MainGameScripts
             var objectsAvailableToSwitch = Physics2D.OverlapAreaAll(
                 currentPlayableObject.transform.position - SwithcableArea / 2,
                 currentPlayableObject.transform.position + SwithcableArea / 2);
-
-            if (objectsAvailableToSwitch.Length != 0)
-                if (Input.GetKeyDown(KeyCode.C))
+            
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                if (objectsAvailableToSwitch.Length != 0)
                 {
                     foreach (var o in objectsAvailableToSwitch)
                     {
@@ -28,6 +29,7 @@ namespace MainGameScripts
                         Camera.player = currentPlayableObject;
                     }
                 }
+            }
 
             currentPlayableObject.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
         }

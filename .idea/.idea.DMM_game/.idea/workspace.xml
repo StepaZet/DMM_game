@@ -5,10 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/LawnMower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/LawnMower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/VacuumCleaner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/VacuumCleaner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
