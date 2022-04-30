@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Linq;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -9,30 +12,32 @@ namespace MainGameScripts
     {
         public PlayableObject currentPlayableObject;
         public CameraController Camera;
-        public Vector3 SwithcableArea;
+        public PlayableObject[] Objects;
 
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                var objectsAvailableToSwitch = new Collider2D[10];
-                var size = Physics2D.OverlapAreaNonAlloc(new Vector2(
-                        currentPlayableObject.transform.position.x - SwithcableArea.x,
-                        currentPlayableObject.transform.position.y - SwithcableArea.y), new Vector2(
-                        currentPlayableObject.transform.position.x + SwithcableArea.x,
-                        currentPlayableObject.transform.position.y + SwithcableArea.y), objectsAvailableToSwitch,
-                    LayerMask.GetMask("Playable"));
+                var closest = currentPlayableObject;
+                var distance = Mathf.Infinity;
+                var position = currentPlayableObject.transform.position;
+                foreach (var ob in Objects)
+                {
+                    if (ob.name == currentPlayableObject.name) continue;
+                    var diff = ob.transform.position - position;
+                    var curDist = diff.sqrMagnitude;
+                    if (!(curDist < distance)) continue;
+                    closest = ob;
+                    distance = curDist;
+                }
 
-                if (size != 0)
-                    foreach (var o in objectsAvailableToSwitch)
-                    {
-                        var newObject = o.gameObject;
-                        if (newObject.name == currentPlayableObject.name) continue;
-                        currentPlayableObject = newObject.GetComponent<PlayableObject>();
-                        currentPlayableObject.GetComponent<Rigidbody2D>().WakeUp();
-                        Camera.player = currentPlayableObject;
-                    }
+                Debug.Log(closest.name);
+                if (distance < 20f)
+                {
+                    currentPlayableObject = closest;
+                    Camera.player = closest;
+                }
             }
 
 
