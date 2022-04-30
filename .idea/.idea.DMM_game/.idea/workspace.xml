@@ -4,6 +4,7 @@
     <list default="true" id="c8fe8ef7-f935-417f-8853-793ffb5977ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/HumanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/HumanController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +23,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="human" />
+                    <option name="lastUsedInstant" value="1651328866" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="Based" />
                     <option name="lastUsedInstant" value="1651313097" />

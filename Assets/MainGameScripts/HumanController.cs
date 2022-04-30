@@ -32,6 +32,7 @@ namespace MainGameScripts
             pauseStart = Time.time;
             currentPathPointIndex = 0;
             currentStage = Stage.Pause;
+            UpdateMoveDirection();
         }
 
         private void FixedUpdate()
@@ -86,6 +87,7 @@ namespace MainGameScripts
                 return;
 
             currentPathPointIndex = GetLoopSum(currentPathPointIndex, 1, pathPoints.Length);
+            UpdateMoveDirection();
             currentStage = Stage.Pause;
             pauseStart = Time.time;
         }
