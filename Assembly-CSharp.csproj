@@ -41,11 +41,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\MainGameScripts\GameManager.cs" />
-     <Compile Include="Assets\MainGameScripts\GUIManager.cs" />
+     <Compile Include="Assets\MainGameScripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\MainGameScripts\Managers\GUIManager.cs" />
      <Compile Include="Assets\StartMenuScripts\GUIManager.cs" />
      <Compile Include="Assets\MetaScripts\SceneChanger.cs" />
-     <Compile Include="Assets\MainGameScripts\PlayableObject.cs" />
+     <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\PlayableObject.cs" />
      <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\Toster.cs" />
      <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\VacuumCleaner.cs" />
      <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\LawnMower.cs" />
@@ -84,11 +84,11 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
      <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\Fan.cs" />
-     <Compile Include="Assets\MainGameScripts\HumanController.cs" />
-     <Compile Include="Assets\MainGameScripts\AnimatorController.cs" />
-     <Compile Include="Assets\MainGameScripts\CameraController.cs" />
-     <Compile Include="Assets\MainGameScripts\PathPoint.cs" />
+     <Compile Include="Assets\MainGameScripts\Human\HumanController.cs" />
+     <Compile Include="Assets\MainGameScripts\Managers\CameraController.cs" />
+     <Compile Include="Assets\MainGameScripts\Human\PathPoint.cs" />
      <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\HumanDebug.cs" />
+     <Compile Include="Assets\MainGameScripts\Managers\AnimationManager.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
