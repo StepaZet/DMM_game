@@ -15,7 +15,7 @@ public class Fan : PlayableObject
         transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(2, 2) * transform.up, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 10) * transform.up, ForceMode2D.Impulse);
         }
     }
 

@@ -11,7 +11,7 @@ namespace MainGameScripts
         public Vector3 SwithcableArea;
         
 
-        private void FixedUpdate()
+        private void Update()
         {
             var objectsAvailableToSwitch = Physics2D.OverlapAreaAll(
                 currentPlayableObject.transform.position - SwithcableArea / 2,

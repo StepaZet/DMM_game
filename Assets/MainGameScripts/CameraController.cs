@@ -26,7 +26,7 @@ namespace MainGameScripts
                     transform.position.z);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (!player) return;
             var currentX = Mathf.RoundToInt(player.transform.position.x);
