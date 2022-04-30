@@ -13,6 +13,8 @@ namespace MainGameScripts
 
         private int currentPathPointIndex;
 
+        private GameObject Player;
+
         private float pauseStart;
         private const float pauseTime = 1f;
 
@@ -22,7 +24,8 @@ namespace MainGameScripts
         private enum Stage
         {
             Moving,
-            Pause
+            Pause,
+            Following
         }
 
         private void Start()
@@ -32,7 +35,7 @@ namespace MainGameScripts
             pauseStart = Time.time;
             currentPathPointIndex = 0;
             currentStage = Stage.Pause;
-            UpdateMoveDirection();
+            UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
         }
 
         private void FixedUpdate()
@@ -50,6 +53,9 @@ namespace MainGameScripts
                 case Stage.Moving:
                     Move();
                     break;
+                case Stage.Following:
+                    Follow();
+                    break;
             }
         }
 
@@ -61,34 +67,48 @@ namespace MainGameScripts
 
         private void OnTriggerStay2D(Collider2D col)
         {
+            if (!col.gameObject.GetComponent<Rigidbody2D>())
+                return;
+
             var rb = col.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log(EyeDirection);
-            Debug.Log(rb.position.x - currentRb.position.x);
 
             if (Mathf.Sign(rb.position.x - currentRb.position.x) == Mathf.Sign(EyeDirection))
             {
-                var sprite = col.gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = Color.green;
-            }
-            else
-            {
-                var sprite = col.gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = Color.white;
+                if (col.gameObject.layer == 6)
+                    if (rb.velocity.magnitude > 0.1f)
+                    {
+                        Player = col.gameObject;
+                        currentStage = Stage.Following;
+                    }
             }
         }
 
         private void Move()
         {
-            var distanceToNextTarget = GetDistance2D(
-                transform.position, pathPoints[currentPathPointIndex].transform.position);
-
             currentRb.velocity = moveDirection * speed;
 
-            if (distanceToNextTarget >= speed * Time.fixedDeltaTime)
+            if (Mathf.Sign(pathPoints[currentPathPointIndex].transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
                 return;
 
+            currentRb.velocity = Vector3.zero;
             currentPathPointIndex = GetLoopSum(currentPathPointIndex, 1, pathPoints.Length);
-            UpdateMoveDirection();
+            UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
+            currentStage = Stage.Pause;
+            pauseStart = Time.time;
+        }
+
+        private void Follow()
+        {
+            UpdateMoveDirection(Player.transform.position);
+            currentRb.velocity = moveDirection * speed;
+            return;
+
+            if (Mathf.Abs(Player.transform.position.x - transform.position.x) > 2f)
+                return;           
+            
+            
+
+            currentRb.velocity = Vector3.zero;
             currentStage = Stage.Pause;
             pauseStart = Time.time;
         }
@@ -101,10 +121,10 @@ namespace MainGameScripts
             return Vector3.Distance(new Vector3(a.x, a.y, 0), new Vector3(b.x, b.y));
         }
 
-        private void UpdateMoveDirection()
+        private void UpdateMoveDirection(Vector3 target)
         {
             moveDirection = new Vector2(
-                Mathf.Sign(pathPoints[currentPathPointIndex].transform.position.x - currentRb.position.x),
+                Mathf.Sign(target.x - currentRb.position.x),
                 0f
                 );
         }
