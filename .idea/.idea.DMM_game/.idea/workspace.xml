@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c8fe8ef7-f935-417f-8853-793ffb5977ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Fan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Fan.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651236659227</updated>
       <workItem from="1651236682632" duration="512000" />
-      <workItem from="1651307560868" duration="10437000" />
+      <workItem from="1651307560868" duration="12035000" />
     </task>
     <servers />
   </component>

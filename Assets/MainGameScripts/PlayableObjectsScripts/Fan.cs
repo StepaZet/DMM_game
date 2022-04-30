@@ -6,16 +6,16 @@ using UnityEngine;
 
 public class Fan : PlayableObject
 {
-    float smooth = 5.0f;
+    float smooth = 7.0f;
     float tiltAngle = 60.0f;
     public override void Move (Vector2 direction) 
     {
         if (BatteryCharge == 0) return;
-        var target = Quaternion.Euler(direction * tiltAngle);
+        var target = Quaternion.Euler(0,0 ,-direction.x * tiltAngle);
         transform.rotation = Quaternion.Slerp(transform.rotation, target,  Time.deltaTime * smooth);
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(5, 5) * transform.right, ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(2, 2) * transform.up, ForceMode2D.Impulse);
         }
     }
 
