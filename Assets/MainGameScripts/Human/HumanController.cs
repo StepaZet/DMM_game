@@ -44,6 +44,7 @@ namespace MainGameScripts
                     if (difference >= pauseTime)
                     {
                         currentStage = Stage.Moving;
+                        EyeDirection = (int)Mathf.Sign(moveDirection.x);
                     }
                     break;
                 case Stage.Moving:
@@ -63,7 +64,7 @@ namespace MainGameScripts
             var rb = col.gameObject.GetComponent<Rigidbody2D>();
             Debug.Log(EyeDirection);
             Debug.Log(rb.position.x - currentRb.position.x);
-            
+
             if (Mathf.Sign(rb.position.x - currentRb.position.x) == Mathf.Sign(EyeDirection))
             {
                 var sprite = col.gameObject.GetComponent<SpriteRenderer>();
@@ -78,7 +79,7 @@ namespace MainGameScripts
 
         private void Move()
         {
-            var distanceToNextTarget = Vector3.Distance(
+            var distanceToNextTarget = GetDistance2D(
                 transform.position, pathPoints[currentPathPointIndex].transform.position);
 
             currentRb.velocity = moveDirection * speed;
@@ -94,7 +95,12 @@ namespace MainGameScripts
 
         private int GetLoopSum(int a, int b, int maxValue)
             => (maxValue + a + b) % maxValue;
-        
+
+        private float GetDistance2D(Vector3 a, Vector3 b)
+        {
+            return Vector3.Distance(new Vector3(a.x, a.y, 0), new Vector3(b.x, b.y));
+        }
+
         private void UpdateMoveDirection()
         {
             moveDirection = new Vector2(
