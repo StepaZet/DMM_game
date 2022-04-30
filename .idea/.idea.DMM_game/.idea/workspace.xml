@@ -31,7 +31,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="Based" />
-                    <option name="lastUsedInstant" value="1651329584" />
+                    <option name="lastUsedInstant" value="1651341505" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="human" />
@@ -56,6 +56,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Landscape/Assets/Scripts/MainGame/SimpleCameraController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Silent Beater/Assets/Scripts/CurvedControls.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/823fb226a3f9439cb41fdcb61f9c86a1157600/c6/78ba6256/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Silent Beater/Assets/TheGuy/Move.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StartMenuScripts/GUIManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -130,24 +131,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs</url>
-          <line>15</line>
-          <properties documentPath="D:\UnityGame\DMM_game\Assets\MainGameScripts\Managers\GameManager.cs" initialLine="15" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="336" />
-            </startOffsets>
-            <endOffsets>
-              <option value="582" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
