@@ -30,6 +30,7 @@ namespace MainGameScripts
                         var newObject = o.gameObject;
                         if (newObject.name == currentPlayableObject.name) continue;
                         currentPlayableObject = newObject.GetComponent<PlayableObject>();
+                        currentPlayableObject.GetComponent<Rigidbody2D>().WakeUp();
                         Camera.player = currentPlayableObject;
                     }
             }
