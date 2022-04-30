@@ -27,7 +27,6 @@ namespace MainGameScripts
                             currentPlayableObject = newObject.GetComponent<PlayableObject>();
                         Camera.player = currentPlayableObject;
                     }
-
                 }
 
             currentPlayableObject.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
