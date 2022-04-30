@@ -6,13 +6,8 @@ namespace MainGameScripts
     public class PlayableObject : MonoBehaviour
     {
         public GameManager gameManager;
-        protected int BatteryCharge = 3;
-    
-    
-        protected void ChangeObject(PlayableObject newObject)
-        {
-            gameManager.currentPlayableObject = newObject;
-        }
+        public int BatteryCharge = 3;
+        
 
         protected void Charge()
         {
