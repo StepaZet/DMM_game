@@ -16,7 +16,7 @@ namespace MainGameScripts
         private GameObject Player;
 
         private float pauseStart;
-        private const float pauseTime = 1f;
+        private const float pauseTime = 2f;
 
         private Stage currentStage;
 
@@ -40,9 +40,11 @@ namespace MainGameScripts
 
         private void FixedUpdate()
         {
+            Debug.Log(currentStage);
             switch (currentStage)
             {
                 case Stage.Pause:
+                    currentRb.velocity = Vector3.zero;
                     var difference = Time.time - pauseStart;
                     if (difference >= pauseTime)
                     {
@@ -79,6 +81,7 @@ namespace MainGameScripts
                     {
                         Player = col.gameObject;
                         currentStage = Stage.Following;
+                        UpdateMoveDirection(Player.transform.position);
                     }
             }
         }
@@ -90,7 +93,6 @@ namespace MainGameScripts
             if (Mathf.Sign(pathPoints[currentPathPointIndex].transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
                 return;
 
-            currentRb.velocity = Vector3.zero;
             currentPathPointIndex = GetLoopSum(currentPathPointIndex, 1, pathPoints.Length);
             UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
             currentStage = Stage.Pause;
@@ -99,16 +101,12 @@ namespace MainGameScripts
 
         private void Follow()
         {
-            UpdateMoveDirection(Player.transform.position);
             currentRb.velocity = moveDirection * speed;
-            return;
 
-            if (Mathf.Abs(Player.transform.position.x - transform.position.x) > 2f)
-                return;           
-            
-            
+            if (Mathf.Sign(Player.transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
+                return;
 
-            currentRb.velocity = Vector3.zero;
+            UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
             currentStage = Stage.Pause;
             pauseStart = Time.time;
         }
@@ -127,6 +125,7 @@ namespace MainGameScripts
                 Mathf.Sign(target.x - currentRb.position.x),
                 0f
                 );
+            EyeDirection = (int)Mathf.Sign(moveDirection.x);
         }
     }
 }
