@@ -15,7 +15,7 @@ namespace MainGameScripts
         {
             var objectsAvailableToSwitch = Physics2D.OverlapAreaAll(
                 currentPlayableObject.transform.position - SwithcableArea / 2,
-                currentPlayableObject.transform.position + SwithcableArea / 2);
+                currentPlayableObject.transform.position + SwithcableArea / 2, LayerMask.GetMask("Playable"));
             
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -24,8 +24,8 @@ namespace MainGameScripts
                     foreach (var o in objectsAvailableToSwitch)
                     {
                         var newObject = o.gameObject;
-                        if (newObject.layer == 6)
-                            currentPlayableObject = newObject.GetComponent<PlayableObject>();
+                        if (newObject.layer != 6) continue;
+                        currentPlayableObject = newObject.GetComponent<PlayableObject>();
                         Camera.player = currentPlayableObject;
                     }
                 }
