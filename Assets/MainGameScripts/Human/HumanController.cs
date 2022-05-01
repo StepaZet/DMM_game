@@ -107,7 +107,7 @@ namespace MainGameScripts
 
             if (Mathf.Sign(Player.transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
                 return;
-            if (gm.currentPlayableObject.name == Player.gameObject.name)
+            if (gm.currentPlayableObject.name == Player.gameObject.name && gm.currentPlayableObject.name != "ChainSaw")
             {
                 var sc = Player.AddComponent<SceneChanger>();
                 sc.ChangeScene(2);

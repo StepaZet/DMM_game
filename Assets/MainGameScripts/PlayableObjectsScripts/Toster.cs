@@ -4,12 +4,14 @@ namespace MainGameScripts.PlayableObjectsScripts
 {
     public class Toster : PlayableObject
     {
+        public AudioSource tosterSound;
         private bool isMovementLock;
         public override void Move (Vector2 direction) 
         {
             if (Input.GetAxisRaw("Vertical") == 0) return;
             if (BatteryCharge <= 0) return;
             if (isMovementLock) return;
+            tosterSound.Play();
             GetComponent<Rigidbody2D>().AddForce(new Vector2(direction.x * 5, direction.y * 7), ForceMode2D.Impulse);
             if(direction != Vector2.zero)
                 DeCharge(0.03);

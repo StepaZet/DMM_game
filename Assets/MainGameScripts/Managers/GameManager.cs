@@ -1,12 +1,6 @@
-using System;
-using System.Collections;
-using System.Linq;
-using System.Threading;
+
 using MetaScripts;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Playables;
 
 namespace MainGameScripts
 {
@@ -16,6 +10,7 @@ namespace MainGameScripts
         public CameraController Camera;
         public PlayableObject[] Objects;
         public GameObject[] batteries;
+        public AudioSource punk;
 
 
 
@@ -81,8 +76,9 @@ namespace MainGameScripts
                     distance = curDist;
                 }
 
-                if (distance < 20f)
+                if (distance < 100f)
                 {
+                    punk.Play();
                     currentPlayableObject = closest;
                     Camera.player = closest;
                 }

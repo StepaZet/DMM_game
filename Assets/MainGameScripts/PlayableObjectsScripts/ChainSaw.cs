@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class ChainSaw : PlayableObject
 {
+    public AudioSource chain;
     public override void Move (Vector2 direction) 
     {
+        chain.Play();
         GetComponent<Rigidbody2D>().AddForce(direction*2, ForceMode2D.Impulse);
     }
     
