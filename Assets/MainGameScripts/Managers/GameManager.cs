@@ -1,4 +1,8 @@
 using System;
+using System.Collections;
+using System.Linq;
+using System.Threading;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -9,31 +13,73 @@ namespace MainGameScripts
     {
         public PlayableObject currentPlayableObject;
         public CameraController Camera;
-        public Vector3 SwithcableArea;
+        public PlayableObject[] Objects;
+        public GameObject[] batteries;
 
 
+
+        private void ChangeBattery()
+        {
+            if (currentPlayableObject.BatteryCharge <= 4)
+            {
+                batteries[3].SetActive(false);
+            }
+            if (currentPlayableObject.BatteryCharge <= 3)
+            {
+                batteries[2].SetActive(false);
+            }
+            if (currentPlayableObject.BatteryCharge <= 2)
+            {
+                batteries[1].SetActive(false);
+            }
+            
+            if (currentPlayableObject.BatteryCharge <= 1)
+            {
+                batteries[0].SetActive(false);
+            }
+            
+            
+            if (currentPlayableObject.BatteryCharge > 4)
+            {
+                batteries[3].SetActive(true);
+            }
+            if (currentPlayableObject.BatteryCharge > 3)
+            {
+                batteries[2].SetActive(true);
+            }
+            if (currentPlayableObject.BatteryCharge > 2)
+            {
+                batteries[1].SetActive(true);
+            }
+            if (currentPlayableObject.BatteryCharge > 1)
+            {
+                batteries[0].SetActive(true);
+            }
+            
+        }
+        
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
-                var objectsAvailableToSwitch = new Collider2D[10];
-                var size = Physics2D.OverlapAreaNonAlloc(new Vector2(
-                        currentPlayableObject.transform.position.x - SwithcableArea.x,
-                        currentPlayableObject.transform.position.y - SwithcableArea.y), new Vector2(
-                        currentPlayableObject.transform.position.x + SwithcableArea.x,
-                        currentPlayableObject.transform.position.y + SwithcableArea.y), objectsAvailableToSwitch,
-                    LayerMask.GetMask("Playable"));
+                var closest = currentPlayableObject;
+                var distance = Mathf.Infinity;
+                var position = currentPlayableObject.transform.position;
+                foreach (var ob in Objects)
+                {
+                    if (ob.name == currentPlayableObject.name) continue;
+                    var diff = ob.transform.position - position;
+                    var curDist = diff.sqrMagnitude;
+                    if (!(curDist < distance)) continue;
+                    closest = ob;
+                    distance = curDist;
+                }
 
-                if (size != 0)
-                    foreach (var o in objectsAvailableToSwitch)
-                    {
-                        var newObject = o.gameObject;
-                        if (newObject.name == currentPlayableObject.name) continue;
-                        currentPlayableObject = newObject.GetComponent<PlayableObject>();
-                        currentPlayableObject.GetComponent<Rigidbody2D>().WakeUp();
-                        Camera.player = currentPlayableObject;
-                    }
+
+                currentPlayableObject = closest;
+                Camera.player = closest;
             }
+            ChangeBattery();
 
 
             currentPlayableObject.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
