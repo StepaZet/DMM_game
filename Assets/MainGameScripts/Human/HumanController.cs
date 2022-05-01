@@ -126,6 +126,7 @@ namespace MainGameScripts
                 0f
                 );
             EyeDirection = (int)Mathf.Sign(moveDirection.x);
+            transform.localScale = new Vector3(-EyeDirection, 1, 1);
         }
     }
 }
