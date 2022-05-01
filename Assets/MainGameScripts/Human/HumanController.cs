@@ -30,7 +30,6 @@ namespace MainGameScripts
 
         private void Start()
         {
-            speed = 8f;
             EyeDirection = 1;
             pauseStart = Time.time;
             currentPathPointIndex = 0;
@@ -126,7 +125,7 @@ namespace MainGameScripts
                 0f
                 );
             EyeDirection = (int)Mathf.Sign(moveDirection.x);
-            transform.localScale = new Vector3(-EyeDirection, 1, 1);
+            transform.localScale = new Vector3(-EyeDirection * Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
         }
     }
 }
