@@ -4,11 +4,6 @@
     <list default="true" id="c8fe8ef7-f935-417f-8853-793ffb5977ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/HumanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Human/HumanController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/ChainSaw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/ChainSaw.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameOver.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameOver.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
@@ -66,12 +61,13 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/Human/KillChildren.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/VacuumCleaner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/823fb226a3f9439cb41fdcb61f9c86a1157600/c6/78ba6256/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Silent Beater/Assets/TheGuy/Move.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/Human/KillDog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/Human/BOOOm/BOOMcontroller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/Managers/WinScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Fan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Landscape/Assets/Scripts/MainGame/SimpleCameraController.cs" root0="SKIP_HIGHLIGHTING" />

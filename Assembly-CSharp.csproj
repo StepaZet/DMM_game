@@ -93,6 +93,8 @@
      <Compile Include="Assets\MainGameScripts\Human\DeathScript.cs" />
      <Compile Include="Assets\MainGameScripts\Human\BOOOm\BOOMcontroller.cs" />
      <Compile Include="Assets\MainGameScripts\PlayableObjectsScripts\ChainSaw.cs" />
+     <Compile Include="Assets\MainGameScripts\Human\KillChildren.cs" />
+     <Compile Include="Assets\MainGameScripts\Human\KillDog.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
