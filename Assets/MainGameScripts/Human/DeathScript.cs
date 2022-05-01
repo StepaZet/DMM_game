@@ -10,6 +10,7 @@ public class DeathScript : MonoBehaviour
 
     public void Kill()
     {
+        part.transform.position = transform.position;
         part.Play();
         human.SetActive(false);
     }

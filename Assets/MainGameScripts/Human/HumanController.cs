@@ -1,3 +1,4 @@
+using MetaScripts;
 using UnityEngine;
 
 namespace MainGameScripts
@@ -16,7 +17,7 @@ namespace MainGameScripts
         private GameObject Player;
 
         private float pauseStart;
-        private const float pauseTime = 2f;
+        public float pauseTime = 2f;
 
         private Stage currentStage;
 
@@ -49,6 +50,7 @@ namespace MainGameScripts
                     {
                         currentStage = Stage.Moving;
                         EyeDirection = (int)Mathf.Sign(moveDirection.x);
+                        UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
                     }
                     break;
                 case Stage.Moving:
@@ -93,7 +95,7 @@ namespace MainGameScripts
                 return;
 
             currentPathPointIndex = GetLoopSum(currentPathPointIndex, 1, pathPoints.Length);
-            UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
+            
             currentStage = Stage.Pause;
             pauseStart = Time.time;
         }
@@ -105,9 +107,8 @@ namespace MainGameScripts
             if (Mathf.Sign(Player.transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
                 return;
 
-            UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
-            currentStage = Stage.Pause;
-            pauseStart = Time.time;
+            var sc = Player.AddComponent<SceneChanger>();
+            sc.ChangeScene(2);
         }
 
         private int GetLoopSum(int a, int b, int maxValue)
