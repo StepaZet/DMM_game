@@ -33,7 +33,7 @@ namespace MainGameScripts
                 batteries[1].SetActive(false);
             }
             
-            if (currentPlayableObject.BatteryCharge <= 1)
+            if (currentPlayableObject.BatteryCharge <= 0.5)
             {
                 batteries[0].SetActive(false);
             }
@@ -51,7 +51,7 @@ namespace MainGameScripts
             {
                 batteries[1].SetActive(true);
             }
-            if (currentPlayableObject.BatteryCharge > 1)
+            if (currentPlayableObject.BatteryCharge > 0.5)
             {
                 batteries[0].SetActive(true);
             }
@@ -79,9 +79,9 @@ namespace MainGameScripts
                 currentPlayableObject = closest;
                 Camera.player = closest;
             }
+            
             ChangeBattery();
-
-
+            
             currentPlayableObject.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
         }
     }

@@ -18,6 +18,6 @@ public class Fan : PlayableObject
             GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 10) * transform.up, ForceMode2D.Impulse);
         }
         if(direction != Vector2.zero)
-            DeCharge(0.003);
+            DeCharge(0.009);
     }
 }
