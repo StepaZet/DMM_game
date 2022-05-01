@@ -17,12 +17,7 @@ public class Fan : PlayableObject
         {
             GetComponent<Rigidbody2D>().AddForce(new Vector2(10, 10) * transform.up, ForceMode2D.Impulse);
         }
-    }
-    
-    
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        
+        if(direction != Vector2.zero)
+            DeCharge(0.05);
     }
 }

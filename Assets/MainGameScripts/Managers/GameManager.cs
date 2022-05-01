@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Threading;
+using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -13,8 +14,50 @@ namespace MainGameScripts
         public PlayableObject currentPlayableObject;
         public CameraController Camera;
         public PlayableObject[] Objects;
+        public GameObject[] batteries;
 
 
+
+        private void ChangeBattery()
+        {
+            if (currentPlayableObject.BatteryCharge <= 4)
+            {
+                batteries[3].SetActive(false);
+            }
+            if (currentPlayableObject.BatteryCharge <= 3)
+            {
+                batteries[2].SetActive(false);
+            }
+            if (currentPlayableObject.BatteryCharge <= 2)
+            {
+                batteries[1].SetActive(false);
+            }
+            
+            if (currentPlayableObject.BatteryCharge <= 1)
+            {
+                batteries[0].SetActive(false);
+            }
+            
+            
+            if (currentPlayableObject.BatteryCharge > 4)
+            {
+                batteries[3].SetActive(true);
+            }
+            if (currentPlayableObject.BatteryCharge > 3)
+            {
+                batteries[2].SetActive(true);
+            }
+            if (currentPlayableObject.BatteryCharge > 2)
+            {
+                batteries[1].SetActive(true);
+            }
+            if (currentPlayableObject.BatteryCharge > 1)
+            {
+                batteries[0].SetActive(true);
+            }
+            
+        }
+        
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.C))
@@ -32,13 +75,11 @@ namespace MainGameScripts
                     distance = curDist;
                 }
 
-                Debug.Log(closest.name);
-                if (distance < 20f)
-                {
-                    currentPlayableObject = closest;
-                    Camera.player = closest;
-                }
+
+                currentPlayableObject = closest;
+                Camera.player = closest;
             }
+            ChangeBattery();
 
 
             currentPlayableObject.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
