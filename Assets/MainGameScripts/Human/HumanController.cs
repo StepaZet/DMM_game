@@ -20,6 +20,7 @@ namespace MainGameScripts
         public float pauseTime = 2f;
 
         private Stage currentStage;
+        public GameManager gm;
 
 
         private enum Stage
@@ -106,9 +107,14 @@ namespace MainGameScripts
 
             if (Mathf.Sign(Player.transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
                 return;
+            if (gm.currentPlayableObject.name == Player.gameObject.name)
+            {
+                var sc = Player.AddComponent<SceneChanger>();
+                sc.ChangeScene(2);
+            }
 
-            var sc = Player.AddComponent<SceneChanger>();
-            sc.ChangeScene(2);
+            currentStage = Stage.Pause;
+            pauseStart = Time.time;
         }
 
         private int GetLoopSum(int a, int b, int maxValue)

@@ -20,7 +20,7 @@ public class ChainSaw : PlayableObject
     {
         if (!other.gameObject.GetComponent<DeathScript>()) return;
         var diff = Mathf.Abs(transform.position.x - other.gameObject.transform.position.x);
-        if (diff > 4f) return;
+        if (diff > 4f) return;      
         other.gameObject.GetComponent<DeathScript>().Kill();
     }
 }

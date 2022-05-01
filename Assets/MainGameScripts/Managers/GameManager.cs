@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Threading;
+using MetaScripts;
 using Microsoft.Unity.VisualStudio.Editor;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -60,6 +61,11 @@ namespace MainGameScripts
         
         private void Update()
         {
+            if (currentPlayableObject.gameObject.transform.position.x > 310)
+            {
+                var sc = gameObject.AddComponent<SceneChanger>();
+                sc.ChangeScene(3);
+            }
             if (Input.GetKeyDown(KeyCode.C))
             {
                 var closest = currentPlayableObject;
@@ -75,9 +81,11 @@ namespace MainGameScripts
                     distance = curDist;
                 }
 
-
-                currentPlayableObject = closest;
-                Camera.player = closest;
+                if (distance < 20f)
+                {
+                    currentPlayableObject = closest;
+                    Camera.player = closest;
+                }
             }
             
             ChangeBattery();
