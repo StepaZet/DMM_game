@@ -12,9 +12,5 @@ namespace MainGameScripts.PlayableObjectsScripts
                 DeCharge(0.005);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-        
-        }
     }
 }
