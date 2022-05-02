@@ -3,12 +3,35 @@
   <component name="ChangeListManager">
     <list default="true" id="c8fe8ef7-f935-417f-8853-793ffb5977ba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DMM_game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/DeathScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Human/DeathScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/HumanController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Human/HumanController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/KillChildren.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/KillChildren.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/KillDog.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Human/KillDog.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/ChainSaw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/ChainSaw.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Fan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Fan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/PlayableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/PlayableObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/VacuumCleaner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/VacuumCleaner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Map.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Map.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NPC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/NPC.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Child.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Child.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dog.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dog.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameOver.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameOver.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameWon.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameWon.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/RiderScriptEditorPersistedState.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +57,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="human-final" />
+                    <option name="lastUsedInstant" value="1651368661" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="battery" />
                     <option name="lastUsedInstant" value="1651362207" />
@@ -61,14 +88,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/VacuumCleaner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/823fb226a3f9439cb41fdcb61f9c86a1157600/c6/78ba6256/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Silent Beater/Assets/TheGuy/Move.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/Human/BOOOm/BOOMcontroller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Fan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/Toster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Landscape/Assets/Scripts/MainGame/SimpleCameraController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Silent Beater/Assets/Scripts/CurvedControls.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/823fb226a3f9439cb41fdcb61f9c86a1157600/c6/78ba6256/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/YandexMusic.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Silent Beater/Assets/TheGuy/Move.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/Human/DeathScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MainGameScripts/PlayableObjectsScripts/ChainSaw.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/StartMenuScripts/GUIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/Новая папка/BOOOm/BOOMcontroller.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="28TNXWkCoEtfPk4Y5bocMlC1l4h" />
   <component name="ProjectViewState">
@@ -86,6 +117,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Downloads/Bruh\DMM_game.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Филипп\Downloads\Bruh" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -96,10 +135,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8428">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="8428" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

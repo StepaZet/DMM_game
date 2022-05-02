@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Linq;
-using System.Threading;
-using Microsoft.Unity.VisualStudio.Editor;
-using Unity.VisualScripting;
+
+using MetaScripts;
 using UnityEngine;
-using UnityEngine.Playables;
 
 namespace MainGameScripts
 {
@@ -15,6 +10,7 @@ namespace MainGameScripts
         public CameraController Camera;
         public PlayableObject[] Objects;
         public GameObject[] batteries;
+        public AudioSource punk;
 
 
 
@@ -33,7 +29,7 @@ namespace MainGameScripts
                 batteries[1].SetActive(false);
             }
             
-            if (currentPlayableObject.BatteryCharge <= 1)
+            if (currentPlayableObject.BatteryCharge <= 0.5)
             {
                 batteries[0].SetActive(false);
             }
@@ -51,7 +47,7 @@ namespace MainGameScripts
             {
                 batteries[1].SetActive(true);
             }
-            if (currentPlayableObject.BatteryCharge > 1)
+            if (currentPlayableObject.BatteryCharge > 0.5)
             {
                 batteries[0].SetActive(true);
             }
@@ -60,6 +56,11 @@ namespace MainGameScripts
         
         private void Update()
         {
+            if (currentPlayableObject.gameObject.transform.position.x > 310)
+            {
+                var sc = gameObject.AddComponent<SceneChanger>();
+                sc.ChangeScene(3);
+            }
             if (Input.GetKeyDown(KeyCode.C))
             {
                 var closest = currentPlayableObject;
@@ -75,13 +76,16 @@ namespace MainGameScripts
                     distance = curDist;
                 }
 
-
-                currentPlayableObject = closest;
-                Camera.player = closest;
+                if (distance < 100f)
+                {
+                    punk.Play();
+                    currentPlayableObject = closest;
+                    Camera.player = closest;
+                }
             }
+            
             ChangeBattery();
-
-
+            
             currentPlayableObject.Move(new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")));
         }
     }

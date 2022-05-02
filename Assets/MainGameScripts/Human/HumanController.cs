@@ -1,3 +1,4 @@
+using MetaScripts;
 using UnityEngine;
 
 namespace MainGameScripts
@@ -13,41 +14,51 @@ namespace MainGameScripts
 
         private int currentPathPointIndex;
 
+        private GameObject Player;
+
         private float pauseStart;
-        private const float pauseTime = 1f;
+        public float pauseTime = 2f;
 
         private Stage currentStage;
+        public GameManager gm;
 
 
         private enum Stage
         {
             Moving,
-            Pause
+            Pause,
+            Following
         }
 
         private void Start()
         {
-            speed = 8f;
             EyeDirection = 1;
             pauseStart = Time.time;
             currentPathPointIndex = 0;
             currentStage = Stage.Pause;
-            UpdateMoveDirection();
+            UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
         }
 
         private void FixedUpdate()
         {
+            Debug.Log(currentStage);
             switch (currentStage)
             {
                 case Stage.Pause:
+                    currentRb.velocity = Vector3.zero;
                     var difference = Time.time - pauseStart;
                     if (difference >= pauseTime)
                     {
                         currentStage = Stage.Moving;
+                        EyeDirection = (int)Mathf.Sign(moveDirection.x);
+                        UpdateMoveDirection(pathPoints[currentPathPointIndex].transform.position);
                     }
                     break;
                 case Stage.Moving:
                     Move();
+                    break;
+                case Stage.Following:
+                    Follow();
                     break;
             }
         }
@@ -60,47 +71,68 @@ namespace MainGameScripts
 
         private void OnTriggerStay2D(Collider2D col)
         {
+            if (!col.gameObject.GetComponent<Rigidbody2D>())
+                return;
+
             var rb = col.gameObject.GetComponent<Rigidbody2D>();
-            Debug.Log(EyeDirection);
-            Debug.Log(rb.position.x - currentRb.position.x);
-            
+
             if (Mathf.Sign(rb.position.x - currentRb.position.x) == Mathf.Sign(EyeDirection))
             {
-                var sprite = col.gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = Color.green;
-            }
-            else
-            {
-                var sprite = col.gameObject.GetComponent<SpriteRenderer>();
-                sprite.color = Color.white;
+                if (col.gameObject.layer == 6)
+                    if (rb.velocity.magnitude > 0.1f)
+                    {
+                        Player = col.gameObject;
+                        currentStage = Stage.Following;
+                        UpdateMoveDirection(Player.transform.position);
+                    }
             }
         }
 
         private void Move()
         {
-            var distanceToNextTarget = Vector3.Distance(
-                transform.position, pathPoints[currentPathPointIndex].transform.position);
-
             currentRb.velocity = moveDirection * speed;
 
-            if (distanceToNextTarget >= speed * Time.fixedDeltaTime)
+            if (Mathf.Sign(pathPoints[currentPathPointIndex].transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
                 return;
 
             currentPathPointIndex = GetLoopSum(currentPathPointIndex, 1, pathPoints.Length);
-            UpdateMoveDirection();
+            
+            currentStage = Stage.Pause;
+            pauseStart = Time.time;
+        }
+
+        private void Follow()
+        {
+            currentRb.velocity = moveDirection * speed;
+
+            if (Mathf.Sign(Player.transform.position.x - transform.position.x) == Mathf.Sign(moveDirection.x))
+                return;
+            if (gm.currentPlayableObject.name == Player.gameObject.name && gm.currentPlayableObject.name != "ChainSaw")
+            {
+                var sc = Player.AddComponent<SceneChanger>();
+                sc.ChangeScene(2);
+            }
+
             currentStage = Stage.Pause;
             pauseStart = Time.time;
         }
 
         private int GetLoopSum(int a, int b, int maxValue)
             => (maxValue + a + b) % maxValue;
-        
-        private void UpdateMoveDirection()
+
+        private float GetDistance2D(Vector3 a, Vector3 b)
+        {
+            return Vector3.Distance(new Vector3(a.x, a.y, 0), new Vector3(b.x, b.y));
+        }
+
+        private void UpdateMoveDirection(Vector3 target)
         {
             moveDirection = new Vector2(
-                Mathf.Sign(pathPoints[currentPathPointIndex].transform.position.x - currentRb.position.x),
+                Mathf.Sign(target.x - currentRb.position.x),
                 0f
                 );
+            EyeDirection = (int)Mathf.Sign(moveDirection.x);
+            transform.localScale = new Vector3(-EyeDirection * Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
         }
     }
 }
